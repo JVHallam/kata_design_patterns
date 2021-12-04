@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WAq4gKn6g54GrmqvI0J2Y9/5twAKmmQveygD0K41nt5Sl9+WkoAKYfLK6364klazdW+as+revc76Zk92mi2D5Q==",
+  "dgSpecHash": "AkypmFFEeDcv3GKDRIgj0jcjUhEkytpmVt6WeeCx3VOR4piH/JqJk29NnQrfVyjdbt37V3sKmQkp5QZvp8l0vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\practise_area\\practise_area.csproj",
+  "projectFilePath": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\models_builders_factories_example\\practise_area.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

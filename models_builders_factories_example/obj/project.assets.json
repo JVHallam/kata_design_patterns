@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\practise_area\\practise_area.csproj",
+      "projectUniqueName": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\models_builders_factories_example\\practise_area.csproj",
       "projectName": "practise_area",
-      "projectPath": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\practise_area\\practise_area.csproj",
+      "projectPath": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\models_builders_factories_example\\practise_area.csproj",
       "packagesPath": "C:\\Users\\Jake.Hallam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\practise_area\\obj\\",
+      "outputPath": "C:\\Users\\Jake.Hallam\\Documents\\Programming\\kata_design_patterns\\models_builders_factories_example\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jake.Hallam\\AppData\\Roaming\\NuGet\\NuGet.Config"
