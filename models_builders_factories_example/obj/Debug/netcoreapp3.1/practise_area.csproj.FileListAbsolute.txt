@@ -1,0 +1,13 @@
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.csprojAssemblyReference.cache
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.AssemblyInfoInputs.cache
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.AssemblyInfo.cs
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.csproj.CoreCompileInputs.cache
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\bin\Debug\netcoreapp3.1\practise_area.exe
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\bin\Debug\netcoreapp3.1\practise_area.deps.json
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\bin\Debug\netcoreapp3.1\practise_area.runtimeconfig.json
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\bin\Debug\netcoreapp3.1\practise_area.runtimeconfig.dev.json
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\bin\Debug\netcoreapp3.1\practise_area.dll
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\bin\Debug\netcoreapp3.1\practise_area.pdb
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.dll
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.pdb
+C:\Users\Jake.Hallam\Documents\Programming\kata_design_patterns\practise_area\obj\Debug\netcoreapp3.1\practise_area.genruntimeconfig.cache
