@@ -44,3 +44,38 @@ Prototype :
 
 * The usecase i've had for this, was creating exponentially branching test cases.
     * Builder.Clone().Set value, but in a SelectMany Statement, followed by another selectMany statement
+
+
+----------------------------------------------------------
+
+# Models
+## Creating a base model
+* Create a new directory - models
+* Create a new model 
+    * User
+    * string name;
+    * int age;
+
+* Use it in the program
+    * Create a user, jake, 26
+    * Create a function to echo:
+        * User, Name : <name>, Age : <Age>
+
+## Create an embedded model
+* Create a new model - Address
+    * ZipCode
+    * House number
+
+* Embedded model 2 into user
+    * User.Address
+
+* Rinse and repeat the above
+
+## Constructors - Use them to replace the by hand shiz.
+* Constructors
+
+# Factories - Replacing the Constructors
+
+# Builder - Replacing the Constructors
+
+# Prototype - Building off of things
