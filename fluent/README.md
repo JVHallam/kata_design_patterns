@@ -53,8 +53,8 @@ Prototype :
 * Create a new directory - models
 * Create a new model 
     * User
-    * string name;
-    * int age;
+        * string name;
+        * int age;
 
 * Use it in the program
     * Create a user, jake, 26
@@ -63,19 +63,97 @@ Prototype :
 
 ## Create an embedded model
 * Create a new model - Address
-    * ZipCode
-    * House number
+    * string ZipCode
+    * int House number
 
 * Embedded model 2 into user
     * User.Address
 
-* Rinse and repeat the above
+* Extend the print function to print the address
+    * Console.WriteLine($"ZipCode : {user.Address.ZipCode}, HouseNumber : {user.Address.HouseNumber}");
+
+* Extend main to give the user an address
 
 ## Constructors - Use them to replace the by hand shiz.
 * Constructors
+    * Make the constructor New up the address
+    * Make the contructor take all 4 values for the user and the address
+
+* Main
+    * Re-write it to use the constructor
+
+----------------------------------------------------------
+
+# Builder - Replacing the Constructors
+* Don't put constructors in your model yo, it makes the code base a little harder to read.
+
+## User Builder
+* Create the user model
+    * string Name
+    * int Age
+
+* Create the user Builder
+    * SetName
+    * SetAge
+    * Build
+
+* Use the builder in the main function, instead of a constructor
+
+## Embedded Builders
+* Create the address model
+    * string ZipCode
+    * int HouseNumber
+
+* Create the address builder
+    * SetZipCode
+    * SetHouseNumber
+    * Build
+
+* Embed the address builder in the user builder
+
+* Give it the WithAddress function
+    * User.WithAddress(a => a.Set() );
+
+* Call address.Build() inside of user.Build()
+
+* Create and echo
+
+----------------------------------------------------------
 
 # Factories - Replacing the Constructors
 
-# Builder - Replacing the Constructors
+## Create the models:
+* Same models and structure as before
+* No constructors
+* Print function
+
+## Create a factory
+* Return a new instance of the class
+* With random values
+* Handle the embedded values
+
+## Print it
+
+----------------------------------------------------------
 
 # Prototype - Building off of things
+* Duplicating classes
+* Use case : SelectMany with TestCases
+
+----------------------------------------------------------
+
+# NOT KATA - THIS IS APPLICATION
+* I want to use the:
+    * Models
+    * Builder
+    * Factory
+    * Prototype
+
+* Have a test case model
+* Have a builder for it
+* Have a factory that builder with random data
+* Make the builder a prototype
+* Create branching scenarios, of of that base piece of data
+    * Foreach value in 1..10, UserBuilder.WithAddress(a => a.SetHouseNumber(value));
+
+
