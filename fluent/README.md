@@ -26,14 +26,6 @@
 
 ----------------------------------------------------------
 
-Abstract Factory:
-* Abstract factory uses factories
-
-* Factory -> A Method
-* Abstract Factory -> Object
-
-* Abstract factory is just an interface, for factory classes
-
 Prototype :
 * Object.Clone()
 * It's on the object that you want to clone
@@ -123,16 +115,50 @@ Prototype :
 # Factories - Replacing the Constructors
 
 ## Create the models:
+* User
+    * string name
+    * int age
+    * Address address
+
+* Address
+    * string PostCode
+    * int houseNumber
+
 * Same models and structure as before
 * No constructors
 * Print function
 
-## Create a factory
+## Create a base factory
+* Create factory directory
+* Create a UserFactory.CreateUser()
+* Make it static
 * Return a new instance of the class
-* With random values
-* Handle the embedded values
+    * Name, jake
+    * Age, 26
+    * Address
+        * PostCode Here
+        * HouseNumber 21
 
-## Print it
+* Use it in the main function
+* Print it
+
+# Random values
+* With random values
+* User.Name:
+   * Create an array of a few names
+   * Get one at random
+
+* User.Age:
+    * An int between 0 and 100
+
+    * Address:
+        * Address.PostCode
+            * SO + a number between 0 and 10
+        * Address.HouseNumber:
+            * An int between 0 and 100
+
+* Create a few 
+* Print them
 
 ----------------------------------------------------------
 
