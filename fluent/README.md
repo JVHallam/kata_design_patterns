@@ -163,8 +163,51 @@ Prototype :
 ----------------------------------------------------------
 
 # Prototype - Building off of things
+* Create a testCase class
+    * bool A;
+    * bool B;
+    * bool C;
+    * bool D;
+
+* Create a print function for this in main:
+    * prints : A : true, B : true, C : true, D : true
+
+* Create a testCase Builder class
+    * A set for each of the above
+    * A build
+
+* Use the builder to create and print one:
+    * A : true
+    * B : false
+    * C : true
+    * D : false
+
+# Creating permutations of all values
+
+* Foreach field in the test case
+    * Foreach possible value
+        * Create a new test case builder
+        * Put it into the list of test case builders
+
+* Use Linq and lists, to do the above
+    * Chain together select statements to 
+    * IEnumerable will cause the code to work, when it should break. 
+    * Case IEnumerable to list, we need to force evaluation
+
+* Build them all
+
+* Make sure the test cases List has been forced to evaluate before printing
+
+* Print them all
+
+* Notice that they're all more or less the same.
+
+# Fixing the issue with clone
 * Duplicating classes
-* Use case : SelectMany with TestCases
+    * Add a clone function to the builder
+    * public TestCaseBuilder Clone()
+
+* In the linq statements, use Clone when setting values
 
 ----------------------------------------------------------
 
