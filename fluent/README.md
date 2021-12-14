@@ -86,21 +86,24 @@
 
 ## Create the models:
 * User
-    * string name
-    * int age
-    * Address address
+    * string Name
+    * int Age
+    * Address Address
 
 * Address
     * string PostCode
-    * int houseNumber
+    * int HouseNumber
 
 * Same models and structure as before
 * No constructors
+* Create an instance of both in the main function
 * Print function
+* Print them
 
 ## Create a base factory
 * Create factory directory
-* Create a UserFactory.CreateUser()
+* Create a static class UserFactory
+* Create UserFactory.Create()
 * Make it static
 * Return a new instance of the class
     * Name, jake
@@ -113,19 +116,25 @@
 * Print it
 
 # Random values
-* With random values
 * User.Name:
-   * Create an array of a few names
-   * Get one at random
+    * Take this list of names
+        * Jake
+        * Jack
+        * Joe
+        * Harry
+        * Tom
+
+    * Now use Random to select which one to use
 
 * User.Age:
-    * An int between 0 and 100
+    * Randomly pick an int between 0 and 100
 
-    * Address:
-        * Address.PostCode
-            * SO + a number between 0 and 10
-        * Address.HouseNumber:
-            * An int between 0 and 100
+* User.Address:
+    * Address.PostCode
+        * Generate the string "SO" + random int between 0 and 10
+
+    * Address.HouseNumber:
+        * An int between 0 and 100
 
 * Create a few 
 * Print them
