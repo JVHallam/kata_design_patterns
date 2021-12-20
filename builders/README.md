@@ -5,15 +5,14 @@
 # Models
 ## Creating a base model
 * Create a new directory - models
-* Create a new model 
-    * User
-        * string name;
-        * int age;
+* Create "User" model
+    * string - Name;
+    * int  - Age;
 
 * Use it in the program
     * Create a user, jake, 26
     * Create a function to echo:
-        * User, Name : <name>, Age : <Age>
+        * User - <name>, Age - <Age>
 
 ## Create an embedded model
 * Create a new model - Address
@@ -28,10 +27,15 @@
 
 * Extend main to give the user an address
 
-## Constructors - Use them to replace the by hand shiz.
-* Constructors
-    * Make the constructor New up the address
-    * Make the contructor take all 4 values for the user and the address
+## Constructors - Use them to replace things
+* User Constructor
+    * Make it take 4 args, 
+        * name 
+        * age 
+        * house number
+        * zipCode
+
+    * Make it new up the address too
 
 * Main
     * Re-write it to use the constructor
@@ -197,10 +201,38 @@
     * Factory
     * Prototype
 
-* Have a test case model
-* Have a builder for it
-* Have a factory that builder with random data
-* Make the builder a prototype
-* Create branching scenarios, of of that base piece of data
-    * Foreach value in 1..10, UserBuilder.WithAddress(a => a.SetHouseNumber(value));
+* Essentially:
+    * Factory -> Generates a Builder with random data -> Populates a model
+    * Builder -> To be copyable -> to create similar copies
+    * You'd have a complex model
+    * You'd want to only change 3 values out of 10
+    * You'd generate a base builder, then change the 3 values, you'd clone it there, then you'd use it
+    * You'd also do selectMany again here
 
+    * You'd also want a function that you're testing with the data. Just make it print for now
+
+# My Lousy attempt at the application:
+## Create the base model
+* User:
+    * name
+    * age
+    * postCode
+    * List<string> Allergy
+        * Is this what i want to test permutations to?
+
+* builder:
+    * SetName
+    * SetAge
+    * SetPostCode
+    * AddAllergy
+
+* Factory:
+    * Random Name
+    * Random Age
+    * Random PostCode
+    * No Allergies
+
+* Prototype:
+    * Allow the User to be duplicated
+
+* Then put them all through the function
