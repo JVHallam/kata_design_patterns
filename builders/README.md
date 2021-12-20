@@ -9,10 +9,15 @@
     * string - Name;
     * int  - Age;
 
+* Create a printer function:
+    * Create Directory Utility
+    * Create Printer class
+    * Create Print(User) method
+        * Echo: User - <name>, Age - <Age>
+
 * Use it in the program
     * Create a user, jake, 26
-    * Create a function to echo:
-        * User - <name>, Age - <Age>
+    * Print it
 
 ## Create an embedded model
 * Create a new model - Address

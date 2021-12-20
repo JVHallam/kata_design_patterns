@@ -1,6 +1,5 @@
 using System;
-
-namespace practise_area.models
+namespace practise_area.Models
 {
     public class Address
     {
