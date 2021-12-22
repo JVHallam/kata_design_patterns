@@ -1,5 +1,11 @@
 # Fluent APIS kata:
 
+* General notes:
+    * All use :
+        * User.cs model
+        * Address.cs model
+        * Printer.Print methods
+
 ----------------------------------------------------------
 
 # Models
@@ -58,7 +64,7 @@
 ----------------------------------------------------------
 
 # Builder - Replacing the Constructors
-* Don't put constructors in your model yo, it makes the code base a little harder to read.
+* Why? : Don't put constructors in your model yo, it makes the code base a little harder to read.
 
 ## User and UserBuilder
 * User Model:
