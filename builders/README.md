@@ -6,6 +6,49 @@
         * Address.cs model
         * Printer.Print methods
 
+    * Move "Creating a base model to" to a common section, up here
+        * Create the User Model
+        * Create the printer
+        * Create a new User(){Name= Jake, Age = 26};
+        * Print the user
+
+# Common Steps:
+## Create a user by hand
+* Create the User Model
+    * string Name;
+    * int Age;
+
+* Create The printer
+    * Create the utility
+    * Printer.Print( User )
+    * User : <Name> - Age : <Age>
+
+* Back in main:
+    * Create a user
+        * Name : Jake
+        * Age : 26
+
+    * Print it
+
+## Create the embedded Address model:
+* Create the address model:
+    * string PostCode
+    * int HouseNumber
+
+* Embed it into the User class
+    * User.Address
+
+* Extend the Printer class:
+    * Print(Address)
+        * Address : <house number> - PostCode : <post code>
+    * Have it be called, when Print(User) is called
+
+* Use it in main:
+    * Update the created user, by setting
+    * User.Address = new Address()
+    * Set PostCode = "BS23"
+    * Set HouseNumber = 1
+
 ----------------------------------------------------------
 
 # Models
@@ -130,60 +173,58 @@
 
 # Factories - Replacing the Constructors
 
-## Create the models:
-* User
-    * string Name
-    * int Age
-    * Address Address
+## Do common step - Create the user model
 
-* Address
-    * string PostCode
-    * int HouseNumber
+## Create a user factory:
+* Create the factory:
+    * Create the "factory" directory
+    * Create the static UserFactory class
+    * Create the "Create" method
+        * Returns a new user:
+            * Name = Jake
+            * Age = 26
+    
+    * Use that in the main function
 
-* Same models and structure as before
-* No constructors
-* Create an instance of both in the main function
-* Print function
-* Print them
+## Do common step - Create the Address model
 
-## Create a base factory
-* Create factory directory
-* Create a static class UserFactory
-* Create UserFactory.Create()
-* Make it static
-* Return a new instance of the class
-    * Name, jake
-    * Age, 26
-    * Address
-        * PostCode Here
-        * HouseNumber 21
+## Create the address factory
+* Address Factory
+    * Create the static "AddressFactory" class
+    * Create the "Create" Method
+        * Return a new Address
+        * HouseNumber = 1
+        * PostCode = BS23
 
-* Use it in the main function
-* Print it
+* Extend the user factory to call it
 
-# Random values
-* User.Name:
-    * Take this list of names
+* Main should Now print a user with an address
+
+## Randomise the values
+* Randomising User values:
+    * Take the list for names:
         * Jake
         * Jack
         * Joe
         * Harry
         * Tom
 
-    * Now use Random to select which one to use
+    * Use Random to select which one to use
 
-* User.Age:
-    * Randomly pick an int between 0 and 100
+    * User.Age:
+        * Randomly pick an int between 0 and 100
 
-* User.Address:
+* Randomising the Address values:
     * Address.PostCode
         * Generate the string "SO" + random int between 0 and 10
 
     * Address.HouseNumber:
         * An int between 0 and 100
 
-* Create a few 
-* Print them
+* Update Main:
+    * Generate 5 users
+    * Print them
+    * Note the random differences
 
 ----------------------------------------------------------
 
