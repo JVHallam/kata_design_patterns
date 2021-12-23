@@ -13,15 +13,18 @@
         * Print the user
 
 # Common Steps:
-## Create a user by hand
+## Create the initial "User" model
 * Create the User Model
-    * string Name;
-    * int Age;
+    * Create the Models Directory
+    * Create the "User" Model
+        * string Name;
+        * int Age;
 
-* Create The printer
-    * Create the utility
-    * Printer.Print( User )
-    * User : <Name> - Age : <Age>
+* Create The printer class
+    * Create the "Utility" Directory
+    * Create the "Printer" class
+        * Static void Print( User )
+        * User : <Name> - Age : <Age>
 
 * Back in main:
     * Create a user
@@ -202,17 +205,18 @@
 
 ## Randomise the values
 * Randomising User values:
-    * Take the list for names:
-        * Jake
-        * Jack
-        * Joe
-        * Harry
-        * Tom
+    * edit the "UserFactory":
+        * Take the list for names:
+            * Jake
+            * Jack
+            * Joe
+            * Harry
+            * Tom
 
-    * Use Random to select which one to use
+        * Use Random to select which one to use
 
-    * User.Age:
-        * Randomly pick an int between 0 and 100
+        * User.Age:
+            * Randomly pick an int between 0 and 100
 
 * Randomising the Address values:
     * Address.PostCode
