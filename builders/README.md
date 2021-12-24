@@ -1,57 +1,5 @@
 # Fluent APIS kata:
 
-* General notes:
-    * All use :
-        * User.cs model
-        * Address.cs model
-        * Printer.Print methods
-
-    * Move "Creating a base model to" to a common section, up here
-        * Create the User Model
-        * Create the printer
-        * Create a new User(){Name= Jake, Age = 26};
-        * Print the user
-
-# Common Steps:
-## Create the initial "User" model
-* Create the User Model
-    * Create the Models Directory
-    * Create the "User" Model
-        * string Name;
-        * int Age;
-
-* Create The printer class
-    * Create the "Utility" Directory
-    * Create the "Printer" class
-        * Static void Print( User )
-        * User : <Name> - Age : <Age>
-
-* Back in main:
-    * Create a user
-        * Name : Jake
-        * Age : 26
-
-    * Print it
-
-## Create the embedded Address model:
-* Create the address model:
-    * string PostCode
-    * int HouseNumber
-
-* Embed it into the User class
-    * User.Address
-
-* Extend the Printer class:
-    * Print(Address)
-        * Address : <house number> - PostCode : <post code>
-    * Have it be called, when Print(User) is called
-
-* Use it in main:
-    * Update the created user, by setting
-    * User.Address = new Address()
-    * Set PostCode = "BS23"
-    * Set HouseNumber = 1
-
 ----------------------------------------------------------
 
 # Models
@@ -233,27 +181,40 @@
 ----------------------------------------------------------
 
 # Prototype - Building off of things
-* Create a testCase class
-    * bool A;
-    * bool B;
-    * bool C;
-    * bool D;
+* This kata sucks - Come up with something better.
+    * Linq, prevents you from being stupid, because it's sooo good.
+    * If you cast an IEnumerable to a list at the wrong point, it will not be borked.
 
-* Create a print function for this in main:
-    * prints : A : true, B : true, C : true, D : true
+## Setup
+* TestCase:
+    * Create the models directory
+    * Create a testCase model
+        * bool A;
+        * bool B;
+        * bool C;
+        * bool D;
 
-* Create a testCase Builder class
-    * A set for each of the above
-    * A build
+* Print:
+    * Create the "Utility" Directory
+    * Create the Printer Class
+    * Print test case:
+        * A : true, B : true, C : true, D : true
 
-* Use the builder to create and print one:
-    * A : true
-    * B : false
-    * C : true
-    * D : false
+* TestCaseBuilder:
+    * Create the "Builders" Directory
+    * A "SetX" for each of the above
+    * A build method
 
-# Creating permutations of all values
+* Main:
+    * Use the builder to create and print one:
+        * A : true
+        * B : false
+        * C : true
+        * D : false
 
+    * Print it
+
+## Creating permutations of all values
 * Foreach field in the test case
     * Foreach possible value
         * Create a new test case builder
