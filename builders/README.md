@@ -1,5 +1,13 @@
 # Fluent APIS kata:
 
+* Layout:
+    * Kata:
+        * 3 Parts per kata
+            * 3 Parts per sub-part
+
+        * Common Parts
+    * Applications
+
 ----------------------------------------------------------
 
 # Models
