@@ -181,61 +181,54 @@
 ----------------------------------------------------------
 
 # Prototype - Building off of things
+## Creating the base class
+* Creating TestCase:
+    * Create : Directory -> Models
+    * Create : TestCase.cs
+        * Members:
+            * bool A;
+            * bool B;
+            * bool C;
+            * bool D;
 
-* DON'T USE BUILDERS
-* JUST USE PROTOTYPES
-
-## Setup
-* TestCase:
-    * Create the models directory
-    * Create a testCase model
-        * bool A;
-        * bool B;
-        * bool C;
-        * bool D;
-
-* Print:
-    * Create the "Utility" Directory
-    * Create the Printer Class
-    * Print test case:
+* Creating Print Utility:
+    * Create : Directory -> Utility
+    * Create : Printer.cs
+    * Method : Print(TestCase)
         * A : true, B : true, C : true, D : true
 
-* Main:
+* Updating Main:
     * Create a test case:
         * A : true
         * B : false
         * C : true
-        * D : false
 
     * Print it
 
-## Creating permutations of all values
-* Foreach field in the test case
-    * Foreach possible value
-        * Create a new test case builder
-        * Put it into the list of test case builders
+## Creating Broken permutations of all values
+* Generate the test cases:
+    * Foreach member ( A, B, C )
+        * Foreach possible values ( True, False )
+            * Create a TestCase
 
 * Use Linq and lists, to do the above
-    * Chain together select statements to 
-    * IEnumerable will cause the code to work, when it should break. 
-    * Case IEnumerable to list, we need to force evaluation
+    * Chain together Select statements to 
+    * Cast IEnumerable to list
 
-* Build them all
-
-* Make sure the test cases List has been forced to evaluate before printing
-
-* Print them all
-
-* Notice that they're all more or less the same.
+* Print:
+    * Go through the list twice
+    * Print out all the values
+    * Notice, It's broken.
 
 # Fixing the issue with clone
-* Duplicating classes
-    * Add a clone function to the class
-    * public TestCase Clone()
+* Duplicating the Class:
+    * Extend TestCase
+    * Add in "public TestCase Clone()"
+    * Clone the class
 
 * In the linq statements, use Clone when setting values
 
-* Test
+* Notice it now works
 
 ----------------------------------------------------------
 
