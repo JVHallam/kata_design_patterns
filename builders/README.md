@@ -181,9 +181,9 @@
 ----------------------------------------------------------
 
 # Prototype - Building off of things
-* This kata sucks - Come up with something better.
-    * Linq, prevents you from being stupid, because it's sooo good.
-    * If you cast an IEnumerable to a list at the wrong point, it will not be borked.
+
+* DON'T USE BUILDERS
+* JUST USE PROTOTYPES
 
 ## Setup
 * TestCase:
@@ -200,13 +200,8 @@
     * Print test case:
         * A : true, B : true, C : true, D : true
 
-* TestCaseBuilder:
-    * Create the "Builders" Directory
-    * A "SetX" for each of the above
-    * A build method
-
 * Main:
-    * Use the builder to create and print one:
+    * Create a test case:
         * A : true
         * B : false
         * C : true
@@ -235,10 +230,12 @@
 
 # Fixing the issue with clone
 * Duplicating classes
-    * Add a clone function to the builder
-    * public TestCaseBuilder Clone()
+    * Add a clone function to the class
+    * public TestCase Clone()
 
 * In the linq statements, use Clone when setting values
+
+* Test
 
 ----------------------------------------------------------
 
