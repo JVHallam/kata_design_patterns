@@ -4,7 +4,7 @@ title: "Builder Design Patterns"
 ---
 
 # Test
-[Common Steps link](./builder-patterns/common-steps)
+[Common Steps link](/builder-patterns/common-steps)
 
 # Models
 ## Creating a base model
