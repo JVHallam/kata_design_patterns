@@ -1,19 +1,10 @@
-----------------------------------------------------------
+---
 slug: "/builder-patterns"
-title: "Kata lol"
-----------------------------------------------------------
+title: "Builder Design Patterns"
+---
 
-# Fluent APIS kata:
-
-* Layout:
-    * Kata:
-        * 3 Parts per kata
-            * 3 Parts per sub-part
-
-        * Common Parts
-    * Applications
-
-----------------------------------------------------------
+# Test
+[Common Steps link](./builder-patterns/common-steps)
 
 # Models
 ## Creating a base model
