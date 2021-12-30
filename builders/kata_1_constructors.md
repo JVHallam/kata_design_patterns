@@ -1,3 +1,8 @@
+---
+slug: "/builder-patterns/constructors"
+title: "Builder Patterns - Constructors"
+---
+
 # Models
 ## Creating a base model
 * Create the "User" Model
