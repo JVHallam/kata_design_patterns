@@ -1,3 +1,8 @@
+---
+slug: "/builder-patterns/common-steps"
+title: "Builder Practise Common Steps"
+---
+
 # Common Steps:
 ## Create the initial "User" model
 * Create the User Model

@@ -1,14 +1,10 @@
-# Fluent APIS kata:
+---
+slug: "/builder-patterns"
+title: "Builder Design Patterns"
+---
 
-* Layout:
-    * Kata:
-        * 3 Parts per kata
-            * 3 Parts per sub-part
-
-        * Common Parts
-    * Applications
-
-----------------------------------------------------------
+# Test
+[Common Steps link](/builder-patterns/common-steps)
 
 # Models
 ## Creating a base model
