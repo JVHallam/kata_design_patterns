@@ -3,17 +3,17 @@ slug: "/builder-patterns"
 title: "Builder Design Patterns"
 ---
 
-# Common Steps
-[Common Steps link](./common-steps)
+# Test
+[Common Steps link](/builder-patterns/common-steps)
 
 # Brief
-This is a brief
+This is a brief about what's going on here
 
 # Application
-Application
+[Here](/builder-patterns/application)
 
-# Katas
-* (one)["./constructors"]
-* (two)["./constructors"]
-* (three)["./constructors"]
-* (four)["./constructors"]
+# Katas:
+* [First](/builder-patterns/constructors)
+* [Second](/builder-patterns/builders)
+* [Third](/builder-patterns/factories)
+* [Fourth](/builder-patterns/prototypes)

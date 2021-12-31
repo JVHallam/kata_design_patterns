@@ -1,3 +1,8 @@
+---
+slug: "/builder-patterns/prototypes"
+title: "Builder Pattern : Prototypes"
+---
+
 # Prototype - Building off of things
 ## Pre setup:
 * dotnet new console

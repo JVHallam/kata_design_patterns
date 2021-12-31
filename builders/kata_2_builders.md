@@ -1,3 +1,8 @@
+---
+slug: "/builder-patterns/builders"
+title: "Builder Pattern : Builders"
+---
+
 # Builder - Replacing the Constructors
 * Why? : Don't put constructors in your model yo, it makes the code base a little harder to read.
 

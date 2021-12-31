@@ -1,6 +1,6 @@
 ---
 slug: "/builder-patterns/constructors"
-title: "Builder Patterns - Constructors"
+title: "Builder Pattern : Constructor"
 ---
 
 # Models
