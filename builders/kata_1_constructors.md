@@ -4,54 +4,23 @@ title: "Builder Pattern : Constructor"
 ---
 
 # Models
-## Creating a base model
-* Create the "User" Model
-    * Create a new directory - models
-    * Create "User" model
-        * string - Name;
-        * int  - Age;
 
-* Create a printer function:
-    * Create "Utility" Directory
-    * Create static Printer class
-    * Create static Print(User) method
-        * Echo: User - <name>, Age - <Age>
+## Common Step : Create the initial "User" model
 
-* Use it in the program
-    * Create a user, jake, 26
-    * Print it
-
-## Create an embedded model
-* Create and embed the new model:
-    * Create a new model - Address
-        * string ZipCode
-        * int House number
-
-    * Extend the User Class:
-        * member: Address Address;
-
-* Extend the print function:
-    * Extend the print function to print the address
-        * ZipCode : <ZipCode> - HouseNumber : <HouseNumber>
-
-* Use it in main:
-    * Add a the address to the user
-        * ZipCode : BS23
-        * HouseNumber : 1
-
-    * Print the user and it's address
+## Common Step : Create the embedded Address model:
 
 ## Constructors - Replace the initialisation
-* User Constructor:
-    * Add a constructor to the user
+* Add a constructor to User:
+    * Add a constructor 
     * Have it take the args:
         * name 
         * age 
         * house number
         * zipCode
 
-    * Have it setup it's address
+    * Initialise the address here
         
 * Updating Main:
-    * Use the constructor
+    * Use the constructor, instead of an initialiser
+
     * Print the result

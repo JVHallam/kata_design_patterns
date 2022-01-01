@@ -5,17 +5,19 @@ title: "Builder Practise Common Steps"
 
 # Common Steps:
 ## Create the initial "User" model
-* Create the User Model
-    * Create the Models Directory
-    * Create the "User" Model
+
+* Setting up the User Model
+    * Create : Models Directory
+    * Create : User Model
         * string Name;
         * int Age;
 
 * Create The printer class
-    * Create the "Utility" Directory
-    * Create the "Printer" class
+    * Create : "Utility" Directory
+    * Create : "Printer" class
         * Static void Print( User )
-        * User : <Name> - Age : <Age>
+        * Outputs: 
+            * User : <Name> - Age : <Age>
 
 * Back in main:
     * Create a user
@@ -25,12 +27,13 @@ title: "Builder Practise Common Steps"
     * Print it
 
 ## Create the embedded Address model:
-* Create the address model:
-    * string PostCode
-    * int HouseNumber
+* Setting up the Address model:
+    * Create : Address Model
+        * string PostCode
+        * int HouseNumber
 
 * Embed it into the User class
-    * User.Address
+    * Add to user, the member : Address
 
 * Extend the Printer class:
     * Print(Address)
