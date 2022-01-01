@@ -6,23 +6,17 @@ title: "Builder Pattern : Builders"
 # Builder - Replacing the Constructors
 * Why? : Don't put constructors in your model yo, it makes the code base a little harder to read.
 
-## User and UserBuilder
-* User Model:
-    * Create the Models directory 
-
-    * Create the model : User
-        * string Name;
-        * int Age;
-
+## Common Step : Create the initial "User" model
+## Create the UserBuilder
 * User Builder:
     * Create the "Builders" Directory 
 
     * Create the UserBuilder
-        * Each method should "return this;"
-        * Methods:
+        * Each builder method "return this;"
             * SetName
             * SetAge
-            * Build - Returns a new User
+
+        * Build - Returns a new user
 
 * Test it:
     * In the program.cs
@@ -33,22 +27,15 @@ title: "Builder Pattern : Builders"
     * Print the output user
         * User - Jake, Age : 26
 
-## Embedded Builders
-* Address Model:
-    * Create the address model
-        * string ZipCode
-        * int HouseNumber
-
-    * Embed it into the User Model:
-        * User.Address 
-
+## Common Step : Create the embedded Address model:
+## Embedded AddressBuilder
 * Builder Setup:
-    * Create the address builder
+    * Create the AddressBuilder
         * Each builder method "return this;"
             * SetZipCode
             * SetHouseNumber
 
-        * Build - Returns an address
+        * Build - Returns a new address
 
     * Embed the address builder in the user builder
         * AddressBuilder.UserBuilder
@@ -65,3 +52,27 @@ title: "Builder Pattern : Builders"
     * Use the "HavingAddress" to set :
         * houseNumber to 1 
         * ZipCode to BS20
+
+## Using a Builder to it's fullest
+* Creating a family
+    * Create Dad 
+        * Name : Joseph
+        * Age : 50
+        * Address:
+            * HouseNumber : 45
+            * PostCode : LONDON
+
+    * Update the builder - To create the mom 
+        * Name : Justine
+        * Age : 45
+
+    * Update the builder - To create the son 
+        * Name : John
+        * Age : 13
+
+    * Update the builder - To create the daughter 
+        * Name : Abby
+        * Age : 20
+
+* Print them all
+    * Check their addresses are all the same

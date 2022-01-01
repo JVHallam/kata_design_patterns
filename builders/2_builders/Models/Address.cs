@@ -1,10 +1,9 @@
 using System;
 
-namespace practise_area.Models
+namespace practise_area.Models;
+
+public class Address
 {
-    public class Address
-    {
-        public string ZipCode;
-        public int HouseNumber;
-    }
+    public int HouseNumber;
+    public string PostCode;
 }

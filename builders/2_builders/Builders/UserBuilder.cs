@@ -1,41 +1,44 @@
 using System;
 using practise_area.Models;
 
-namespace practise_area.Builders
+namespace practise_area.Builders;
+
+public class UserBuilder
 {
-    public class UserBuilder
+    private readonly User _user;
+    private readonly AddressBuilder _addressBuilder;
+
+    public UserBuilder()
     {
-        private readonly User _user;
-        private readonly AddressBuilder _addressBuilder;
+        _user = new User(); 
+        _addressBuilder = new AddressBuilder();
+    }
 
-        public UserBuilder()
-        {
-            _user = new User();
-            _addressBuilder = new AddressBuilder();
-        }
+    public UserBuilder SetName(string value)
+    {
+        _user.Name = value;
+        return this;
+    }
 
-        public UserBuilder SetName(string value)
-        {
-            _user.Name = value;
-            return this;
-        }
+    public UserBuilder SetAge(int value)
+    {
+        _user.Age = value;
+        return this;
+    }
 
-        public UserBuilder SetAge(int value)
-        {
-            _user.Age = value;
-            return this;
-        }
+    public UserBuilder HavingAddress(Action<AddressBuilder> callback)
+    {
+        callback(_addressBuilder);
+        return this;
+    }
 
-        public UserBuilder HavingAddress(Action<AddressBuilder> callback)
+    public User Build()
+    {
+        return new User()
         {
-            callback(_addressBuilder);
-            return this;
-        }
-
-        public User Build()
-        {
-            _user.Address = _addressBuilder.Build();
-            return _user;
-        }
+            Name = _user.Name,
+            Age = _user.Age,
+            Address = _addressBuilder.Build()
+        };
     }
 }

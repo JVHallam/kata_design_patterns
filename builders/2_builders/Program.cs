@@ -1,17 +1,35 @@
 ﻿using practise_area.Models;
-using practise_area.Builders;
 using practise_area.Utility;
+using practise_area.Builders;
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-
-var user = new UserBuilder()
-                    .SetName("Jake")
-                    .SetAge(26)
+var baseBuilder = new UserBuilder()
                     .HavingAddress(a => a
-                            .SetZipCode("Test")
-                            .SetHouseNumber(1)
-                    )
+                            .SetHouseNumber(45)
+                            .SetPostCode("LONDON")
+                    );
+
+var father = baseBuilder
+                    .SetName("Joseph")
+                    .SetAge(50)
                     .Build();
 
-Printer.Print(user);
+var son = baseBuilder
+                    .SetName("John")
+                    .SetAge(13)
+                    .Build();
+
+var mom = baseBuilder
+                    .SetName("Justine")
+                    .SetAge(45)
+                    .Build();
+
+var daughter = baseBuilder
+                    .SetName("Abby")
+                    .SetAge(20)
+                    .Build();
+
+
+Printer.Print(father);
+Printer.Print(son);
+Printer.Print(mom);
+Printer.Print(daughter);
