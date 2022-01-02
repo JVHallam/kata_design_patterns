@@ -20,7 +20,7 @@ title: "Builder Pattern : Prototypes"
     * Create : Directory -> Utility
     * Create : Printer.cs
     * Method : Print(TestCase)
-        * A : true, B : true, C : true, D : true
+        * A : true, B : true, C : true
 
 * Updating Main:
     * Create a test case:
