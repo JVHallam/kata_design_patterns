@@ -9,7 +9,7 @@ title: "Builder Pattern : Factories"
 
 ## Create a user factory:
 * Create the factory:
-    * Create : directory - "factory" 
+    * Create : directory - "Factories" 
     * Create : static class - UserFactory 
     * Create : method - "Create"
         * Returns a new user:
@@ -22,15 +22,18 @@ title: "Builder Pattern : Factories"
 
 ## Create the address factory
 * Address Factory
-    * Create the static "AddressFactory" class
-    * Create the "Create" Method
+    * Create : static "AddressFactory" class
+    * Create : "Create" Method
         * Return a new Address
         * HouseNumber = 1
         * PostCode = BS23
 
-* Extend the user factory to call it
+* User Factory:
+    * Extend the user factory to call it
+    * Automatically add the Address to the user
 
-* Main should Now print a user with an address
+* Update Main:
+    * Remove the manual setting of the address
 
 ## Randomise the values
 * Randomising User values:
