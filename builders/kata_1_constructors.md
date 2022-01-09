@@ -1,8 +1,3 @@
----
-slug: "/builder-patterns/constructors"
-title: "Builder Pattern : Constructor"
----
-
 # Models
 
 ## Common Step : Create the initial "User" model

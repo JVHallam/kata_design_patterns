@@ -1,8 +1,3 @@
----
-slug: "/builder-patterns"
-title: "Builder Design Patterns"
----
-
 # Test
 [Common Steps link](/builder-patterns/common-steps)
 

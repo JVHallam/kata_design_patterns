@@ -1,8 +1,3 @@
----
-slug: "/builder-patterns/factories"
-title: "Builder Pattern : Factories"
----
-
 # Factories - Replacing the Constructors
 
 ## Do common step - Create the user model
