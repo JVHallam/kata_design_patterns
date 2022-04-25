@@ -29,24 +29,30 @@ State - changes it class based on it's state
       create the image until the first call.
 
 # Behvaiour Design patterns I have no idea about
-*  Chain of responsibility
-*  Command - It sounds like a transaction of requests
-*  Interpretter - Just sounds like a translator kinda meme
-*  Iterator/cursor - It's a class that allows you to move through a list, and keeps track of where you are and what's next for you.
-    * Could be useful for iterating over elements in a graph
-*  Memento - Save the state of an object, so it can be restored later
-*  Observer - It's publish subscribe event driven stuff
-*  State - Change behaviour based on state
-*  Mediator - 
-*  Strategy - 
-*  Visitor - 
+* Ones that sound like fun
+    *  Memento - Save the state of an object, so it can be restored later
+        * Could do memento -> Proxy -> Builder -> Class
+
+    *  Chain of responsibility
+        * Could do chain -> some wrapper kinda meme -> Factory -> Class
+
+* Ones idk about:
+    *  Command - It sounds like a transaction of requests
+    *  Interpretter - Just sounds like a translator kinda meme
+    *  Iterator/cursor - It's a class that allows you to move through a list, and keeps track of where you are and what's next for you.
+        * Could be useful for iterating over elements in a graph
+    *  Observer - It's publish subscribe event driven stuff
+    *  State - Change behaviour based on state
+    *  Mediator - 
+    *  Strategy - 
+    *  Visitor - 
 
 # Structural Design patterns i have no idea about
 * Adapter - 
 * Bridge - 
 * Composite - 
 * Decorator - 
-* Facade
+* Facade - 
 * Flyweight - 
 
 # Creation design patterns i have no idea about
