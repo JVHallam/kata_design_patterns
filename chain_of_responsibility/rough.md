@@ -18,7 +18,7 @@
 * IRequest
     * 2 numbers as properties
 
-* Request:  
+* Request:   - IS this 
     * AddRequest : IRequest
     * SubtractRequest : IRequest
 
@@ -63,7 +63,12 @@
     * Maybe composite too lol
 
 # What you're doing:
-* Part I: Introduce requests
+* Patterns used here:
+    * Chain Of Responsibility
+    * Builder
+    * Factory
+
+* Part I: Introduce requests 
     * Create /Requests
     * Create the AddRequest model
     * Create a Calc.Calculate static function
