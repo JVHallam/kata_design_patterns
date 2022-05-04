@@ -1,129 +1,104 @@
 # Practise
 * What we do:
     * Inherritence
-    * Chain of command
-    * Builder Pattern
-    * Factory method
+    * Abstract base classes
 
-* Folder structure:
-    * /Requests
-        * /interfaces
-    * /Handlers
-        * /interfaces
-    * /Factories
-    * /Builders
-
-* Basically, a calculator
-
-* IRequest
-    * 2 numbers as properties
-
-* Request:   - IS this 
-    * AddRequest : IRequest
-    * SubtractRequest : IRequest
-
-* IHandler:
-    * Handle(IRequest)
-    * RegisterNext
-    
-* Handlers:
-    * AddHandler : IHandler
-    * SubtractHandler : IHandler
-    * DebugHandler : IHandler -> prints out the request and calls next
-
-* Chain em
-
-* Have Something compose them. Builder?
-    * ChainBuilder.AddHandler(IHandler)
-    * Build() => Registers them all into a chain, then returns the head of the queue
-
-* Factory Method:
-    * Instead of creating the requests have a method that takes
-    * int number, int number, char operation
-    * operation -> +, -, /, *
-    * returns one of the classes
-
-# More indepth
-* Models:
-    * Inherritance 
-    * Interfaces
-    * Base Classes 
-    * Etc.
-
-* Factories
-    * Abstract
-    * Other
-    * Steal the stuff from before
-
-* Builders
-    * Steal the builder stuff from before
-
-* Chain Of Command
-    * Idk tbh
-    * Maybe composite too lol
+    * Implement these design patterns:
+        * Chain of command
+        * Builder Pattern
+        * Factory method
 
 # What you're doing:
-* Patterns used here:
-    * Chain Of Responsibility
-    * Builder
-    * Factory
+* Part 0: Setup
+    * Dotnet new console
+    * Hello world
+    * Create a calculator
+        * Calc.Calculate static function
+        * Takes 2 numbers
+        * Takes an operator character
+        * Does +, -, /, and *
+    * Test the calculator
+        * Do 2 + 2 => 4
+        * Do 2 - 2 => 0
+        * Do 2 / 2 => 1
+        * Do 2 * 2 => 4
 
 * Part I: Introduce requests 
     * Create /Requests
-    * Create the AddRequest model
-    * Create a Calc.Calculate static function
-        * Calculate the result
-        * Return it
-        * Print it in the request
-        * Print the final result in main
+    * Create the AddRequest model - takes 2 ints
+    * Overload calc to take requests too
+    * Use it instead of the other + method
 
 * Part II: Introduce more requests
     * Add subtract request
-    * Introduce the MathRequest base class
     * Extend Calculate Request
-    * Use a switch
-    * Begin using a method for each type
+    * Implement the calc for subtract request
+    * Introduce the MathRequest base class - It has the Properties instead
+    * Have both requests now inherit that
+    * Use it instead of the other - method
 
 * Part III: Introduce the handlers
     * Create /Handlers
-    * Introduce the IHandler interface
-        * int Handle(MathRequest req)
-    * Introduce the AddHandler - not static
-    * Introduce the SubtractHandler - not static
-    * Have them be called in the switch, to handle their
+    * Introduce the AddHandler 
+    * give it a Calculate(AddRequest) function
+    * Use it in the earlier function
 
-* Part IV: Introduce the chain
-    * Add RegisterNext(IHandler handler) to the interface
-    * Each handler now takes a MathRequest in handle, not their subsequent things
-    * If they can handle, they do, if not, they call next
+* Part IV: Abstract the handlers
+    * Create an Abstract Base Class:
+        * RequestHandler
+        * RequestHandler:abstract double Calculate(MathRequestBase)
+    * Add the SubtractHandler : RequestHandler
+    * Use the subtract handler
 
-* Part V: Introduce the error handling
-    * Create the NotImplementedHandler - throws an exception if it's reached
-    * Put this at the end of the chain
-    * Introduce the DivisionRequest - but only the request
-    * Call with this request
-    * See it throws and exception as expected
+* Part V: Finish the Calculate function:
+    * Implement the Multipy and Division Requests
+    * Implement the Multipy and Division Handlers
+    * Condense Calc.cs to be one function:
+        * Calculate(MathRequestBase request)
+        * Switch based on the type
+        * To the correct handler
 
-* Part VI: Introduce the ChainBuilder
-    * create /Builders
-    * Create the chain builder class
-    * have it have an AddNextHandler(IHandler) function
-    * build hooks them all up and returns the first
-    * Use this instead
+* Part VI: Introduce the chain
+    * Extend handler base:
+        * HandleBase:abstract bool CanHandle(MathRequestBase)
 
-* Part VII: 
-    * create /Factories
-    * Introduce the RequestFactory
-    * Use it instead of the others
-    * Make it unable to take operators not implemented
-    * Should still take div, and div make the chain shit it's pants
+    * Implement it in each handler:
+        * Each handler checks if it's a type it can handle
 
-* Part VIII:
-    * Refactor and find something else to pad this out to eight entries
-    * Handler abstract base class?
-        * move RegisterNext here
-        * move Handle - calls off to CalcAndPrint if the type is right
-        * CalcAndPrint - Abstract - should be implemented by the inherriting class
+    * Extend handler base more:
+        * void RegisterNext(HandlerBase next)
+            * Saves the next handler in the chain
+        * public double Handle(MathRequestBase request)
+            * This uses CanHandle to check if it can handle the request
+            * It calls Calculate if it can
+            * It calls the next in the chain if not
 
-    * Debug Handler - that takes the above and just prints the type and the args
-    * Add that to the chain
+    * Use the chain implementation instead of the switch statement
+
+* Part VII: Introduce the builder
+    * Create /Builders
+    * Create a HandlerChainBuilder
+    * Make it have:
+        * HandlerChainBuilder AddNext(HandlerBase)
+        * HandlerBase Build()
+
+    * Use it in the Calc.cs function
+
+* Part VIII: Introduce the factory:
+    * Create /Factories
+    * Create a static RequestFactory
+        * MathRequestBase Create(first, second, op)
+        * Returns a request, base on the operator
+    * Use this request factory in the main
+
+* Part IX: Play with it
+    * Introduce the DebugHandler
+    * Create the IHandler interface
+        * It has RegisterNext
+        * Handle()
+    * It just Console.WriteLines the request, then calls the next one - inside of Calc
+    * Use it
+
+* Part X: Redo this again
+    * Either refactor this and condense it, or extend it to be longer?
+    * Maybe implement an error handler to handle un-handled responses
