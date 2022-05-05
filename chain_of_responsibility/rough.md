@@ -9,10 +9,12 @@
         * Factory method
 
 # What you're doing:
-* Part 0: Setup
+* Part I: Setup the scenario
     * Dotnet new console
     * Hello world
     * Create a calculator
+        * /calculator
+            * calc.cs
         * Calc.Calculate static function
         * Takes 2 numbers
         * Takes an operator character
@@ -23,57 +25,54 @@
         * Do 2 / 2 => 1
         * Do 2 * 2 => 4
 
-* Part I: Introduce requests 
+* Part II: Capture First and second into a request
     * Create /Requests
-    * Create the AddRequest model - takes 2 ints
-    * Overload calc to take requests too
-    * Use it instead of the other + method
+    * Create the MathRequest model
+        * Put first and second into it as properties
+    * Refactor the Calc.Calculate function to take those
+    * Change program.cs to use those
+    * Test you still get 4,0,1,4
 
-* Part II: Introduce more requests
-    * Add subtract request
-    * Extend Calculate Request
-    * Implement the calc for subtract request
-    * Introduce the MathRequest base class - It has the Properties instead
-    * Have both requests now inherit that
-    * Use it instead of the other - method
+* Part III: Refactor in the operators as types
+    * Create the AddRequest
+    * Use it in program.cs for the add
+    * in the calc.cs - check if the type is add, if so, do add
+        * Else, check the operator
+    * test 4,0,1,4
+    * Rinse and repeat for the other 3 operators
+    * Remove operator as an arg to calc.Calculate
+        * It's now just calc.Calculate(MathRequest request);
 
-* Part III: Introduce the handlers
+* Part IV: Move the math logic into the handler
     * Create /Handlers
+    * Introduce the MathHandler
     * Introduce the AddHandler 
     * give it a Calculate(AddRequest) function
     * Use it in the earlier function
+    * Rinse and repeat for all 4 operations
 
-* Part IV: Abstract the handlers
-    * Create an Abstract Base Class:
-        * RequestHandler
-        * RequestHandler:abstract double Calculate(MathRequestBase)
-    * Add the SubtractHandler : RequestHandler
-    * Use the subtract handler
+* Part V: Allow Handlers to choose if they handle the request
+    * Add the CanHandle function to the Handlers
+        * public bool CanHandle(MathRequest)
+    * Use that to check if a handler can handle the request
+    * Use that inside of calc.cs
+        * Don't use a switch statement, use a CHAIN of if statements
 
-* Part V: Finish the Calculate function:
-    * Implement the Multipy and Division Requests
-    * Implement the Multipy and Division Handlers
-    * Condense Calc.cs to be one function:
-        * Calculate(MathRequestBase request)
-        * Switch based on the type
-        * To the correct handler
-
-* Part VI: Introduce the chain
-    * Extend handler base:
-        * HandleBase:abstract bool CanHandle(MathRequestBase)
-
-    * Implement it in each handler:
-        * Each handler checks if it's a type it can handle
-
-    * Extend handler base more:
-        * void RegisterNext(HandlerBase next)
-            * Saves the next handler in the chain
-        * public double Handle(MathRequestBase request)
-            * This uses CanHandle to check if it can handle the request
-            * It calls Calculate if it can
-            * It calls the next in the chain if not
-
-    * Use the chain implementation instead of the switch statement
+* Part VI: Chain them together
+    * Create the /Handlers/MathChainHandler.cs
+    * Methods:
+        * abstract double Calculate
+        * abstract bool CanHandle
+        * double Handle(MathRequest req)
+            * Calls can handle
+            * If it can, call calculate
+            * Else, don't 
+        * void RegisterNext(MathChainHandler next)
+            * States who's next in the chain
+    * Make all handlers inherit this
+    * Get them to chain instead
+    * Call handle on the first entry in the chain
+    * Re-test, 4,0,1,4
 
 * Part VII: Introduce the builder
     * Create /Builders
@@ -90,15 +89,3 @@
         * MathRequestBase Create(first, second, op)
         * Returns a request, base on the operator
     * Use this request factory in the main
-
-* Part IX: Play with it
-    * Introduce the DebugHandler
-    * Create the IHandler interface
-        * It has RegisterNext
-        * Handle()
-    * It just Console.WriteLines the request, then calls the next one - inside of Calc
-    * Use it
-
-* Part X: Redo this again
-    * Either refactor this and condense it, or extend it to be longer?
-    * Maybe implement an error handler to handle un-handled responses
