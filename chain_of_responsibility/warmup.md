@@ -25,30 +25,38 @@
         * Do 2 / 2 => 1
         * Do 2 * 2 => 4
 
-* Part II: Capture First and second into a request
+* Part II: Capture Calc args into a request
     * Create /Requests
     * Create the MathRequest model
-        * Put first and second into it as properties
+        * It's the args for the Calc.Calculate function
+        * Properties -> First, Second, Op
+        * Constructor(First, Second, Op)
+
     * Refactor the Calc.Calculate function to take those
     * Change program.cs to use those
     * Test you still get 4,0,1,4
 
-* Part III: Refactor in the operators as types
-    * Create the AddRequest
-    * Use it in program.cs for the add
-    * in the calc.cs - check if the type is add, if so, do add
-        * Else, check the operator
-    * test 4,0,1,4
-    * Rinse and repeat for the other 3 operators
-    * Remove operator as an arg to calc.Calculate
-        * It's now just calc.Calculate(MathRequest request);
+* Part III: Refactor in the operators as their own types - reduce the length of the constructor down to 2 args
+    * Create the request subtype:
+        * Create the AddRequest
+            * Make it inherit math request
+            * Constructor(First, Second)
+            * Pass those off to base
+
+    * Test the subtype:
+        * Use it in program.cs for the Add
+        * test 4,0,1,4
+
+    * Update the other subtypes:
+        * Rinse and repeat for the other 3 operators
 
 * Part IV: Move the math logic into the handler
     * Create /Handlers
-    * Introduce the MathHandler
     * Introduce the AddHandler 
-    * give it a Calculate(AddRequest) function
-    * Use it in the earlier function
+        * double Calculate(MathRequest) 
+
+    * Use it in the earlier function 
+
     * Rinse and repeat for all 4 operations
 
 * Part V: Allow Handlers to choose if they handle the request
@@ -56,19 +64,22 @@
         * public bool CanHandle(MathRequest)
     * Use that to check if a handler can handle the request
     * Use that inside of calc.cs
-        * Don't use a switch statement, use a CHAIN of if statements
+        * Use a chain of if's - calling CanHandle
+        * Don't use a switch statement
 
 * Part VI: Chain them together
     * Create the /Handlers/MathChainHandler.cs
+
     * Methods:
         * abstract double Calculate
         * abstract bool CanHandle
         * double Handle(MathRequest req)
             * Calls can handle
             * If it can, call calculate
-            * Else, don't 
-        * void RegisterNext(MathChainHandler next)
+            * Else, call next
+        * void SetNext(MathChainHandler next)
             * States who's next in the chain
+
     * Make all handlers inherit this
     * Get them to chain instead
     * Call handle on the first entry in the chain
@@ -76,16 +87,24 @@
 
 * Part VII: Introduce the builder
     * Create /Builders
-    * Create a HandlerChainBuilder
+    * Create a ChainHandlerBuilder
     * Make it have:
-        * HandlerChainBuilder AddNext(HandlerBase)
-        * HandlerBase Build()
+        * ChainHandlerBuilder AddNext(HandlerBase)
+        * MathChainHandler Build()
 
     * Use it in the Calc.cs function
 
 * Part VIII: Introduce the factory:
+    * In Program.cs:
+        * Put all operators into an array
+        * Foreach op in that array
+        * do the math operation on 2 and 2
+        * You'll need a factory for this
+
     * Create /Factories
+
     * Create a static RequestFactory
         * MathRequestBase Create(first, second, op)
         * Returns a request, base on the operator
+
     * Use this request factory in the main
